@@ -247,5 +247,6 @@ void playerLosed(struct player *currentPlayer)
     move(95, 0); printf("O jogador %s foi a falencia!", currentPlayer->nome);
     movePlayer(currentPlayer, currentPlayer->pos, 666);
     currentPlayer->faliu = TRUE;
+    jogadoresAtivos--;
     // TODO: Devolver propriedades do jogador ao banco (?)
 }

@@ -44,10 +44,60 @@ int maingame() //loop do jogo
             turnos++;
             goto SAIRGAME;  }
 
+        if(jogadoresAtivos <= 1) { //VITORIA!!!!!!!!!!!!!!!!!!!
+            move(95, 0); printf("%s voce ganhou o jogo!!!", currentPlayer->nome);
+            move(95, 1); printf("Pressione qualquer tecla para continuar");
+            move(95, 2); fflush(stdin); getchar();
+            return EXIT_SUCCESS;
+        }
+        
+
         printPlayerInfo(currentPlayer);
 
         int housesToWalk;
+        if(currentPlayer->prisao){
+            printPlayerInfo(currentPlayer);
+            move(95,5); printf("Voce esta na prisao");
+            move(95,6); printf("Faltam %i turnos.", currentPlayer->turnosPrisao);
+            move(95,7); printf("O que voce deseja fazer?");
+            move(95,8); printf("1 - TENTAR ROLAR"); move(95,9); printf("2 - PAGAR FIANCA(200$)");
+            choosepris: move(95,10); fflush(stdin); char opcaoPris = getchar();
+            switch (opcaoPris)
+            {
+                case '1': ;
+                    int rollPris1 = rollDice();
+                    int rollPris2 = rollDice();
+                    move(95,11); printf("%s rolou %i e %i para sair da prisao!", currentPlayer->nome, rollPris1, rollPris2);
+                    if(rollPris1==rollPris2) {
+                        move(95,12); printf("As duas rolagens foram iguais! %s saiu da prisao!", currentPlayer->nome);
+                        move(95,13); printf("Pressione qualquer botao para continuar");
+                        move(95,14); fflush(stdin); getchar();
+                    } else {
+                        move(95,12); printf("As duas rolagens nao foram iguais...");
+                        (currentPlayer->turnosPrisao)--;
+                        goto turnoacabou;
+                    }
 
+                    break;
+                case '2':
+                    if(currentPlayer->money >= 500) {
+                        currentPlayer->money -= 500;
+                    } else {
+                        move(95,12); printf("Voce nao tem dinheiro suficiente!");
+                        move(95,13); printf("Pressione qualquer botao para continuar");
+                        move(95,14); fflush(stdin); getchar();
+                    }
+                    break;
+                default:
+                    move(95,11); printf("Opcao invalida, por favor tente novamente");
+                    move(95,12); printf("Pressione qualquer botao para continuar");
+                    move(95,13); fflush(stdin); getchar();
+                    ClearRightScreen(10);
+                    goto choosepris;
+                    break;
+            }
+            
+        }
         if(!(currentPlayer->prisao == 1))
         {
             int rollIsOver = 0;
@@ -85,6 +135,12 @@ int maingame() //loop do jogo
             move(95,6); printf("Voce caiu na casa %s, ", currentHouse->name);
             if(currentHouse->isOwnedBySomeone)
             {
+                if(currentHouse->ownerID == currentPlayer->ID) {
+                    move(95,7); printf("Essa é uma propriedade sua!.\n");
+                    move(95,8); printf("Pressione qualquer botao para continuar");
+                    move(95,8); fflush(stdin); getchar();
+                    break;
+                }
                 move(95,7); printf("ela e possuida por %s.\n", players[currentHouse->ownerID].nome);
                 move(95,8); printf("Voce deve pagar %d$ ao proprietario.\n", currentHouse->rent);
                 // TODO: adicionar o sistema de pagar aluguel
@@ -144,9 +200,15 @@ int maingame() //loop do jogo
             move(95,6); printf("Voce caiu na casa %s, ", currentHouse->name);
             if(currentHouse->isOwnedBySomeone)
             {
+                if(currentHouse->ownerID == currentPlayer->ID) {
+                    move(95,7); printf("Essa é uma propriedade sua!.\n");
+                    move(95,8); printf("Pressione qualquer botao para continuar");
+                    move(95,8); fflush(stdin); getchar();
+                    break;
+                }
                 move(95,7); printf("ela e possuida por %s.\n", players[currentHouse->ownerID].nome);
                 move(95,8); printf("Voce deve pagar %d$ ao proprietario.\n", housesToWalk*(currentHouse->rent));
-                // TODO: adicionar o sistema de pagar aluguel
+
                 if(currentPlayer->netWorth < housesToWalk*(currentHouse->rent)) { // Falencia!
                     move(95,9); printf("O jogador %s nao tem como pagar o aluguel!.", currentPlayer->nome);
                     move(95,10); playerLosed(currentPlayer);
@@ -199,9 +261,10 @@ int maingame() //loop do jogo
 
             case GO_TO_JAIL:
             move(95,5); printf("Opa! Você está preso!");
+            currentPlayer->pos = 11;
             currentPlayer->prisao = TRUE;
             currentPlayer->turnosPrisao = 3;
-            // TODO: adicionar sistema de prisao
+            goto turnoacabou;
             break;
 
             case FREE_DAY:

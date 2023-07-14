@@ -39,19 +39,6 @@ struct house {
 
 struct house houses[40], *currentHouse;
 
-/*
-void declareHouses(struct house houses[]){
-    for(int i=0;i<housesCount;i++){
-        houses[i].ID = i;
-        houses[i].type = 0; // TODO: adicionar grupos de casa
-        // TODO: houses[i].colourGroup = (X, X, X)
-        houses[i].isOwnedBySomeone = FALSE;
-        houses[i].ownerID = houses[i].hotelBuilt = houses[i].housesBuilt = 0;
-        houses[i].rent = 0;
-    }
-}
-*/ // TODO: excluir essa função
-
 void updateHousesRent(int houseID) {
     if(houses[houseID].housesBuilt > 0) {
         houses[houseID].rent = houses[houseID].rentWithHouses[(houses[houseID].housesBuilt)-1]; }

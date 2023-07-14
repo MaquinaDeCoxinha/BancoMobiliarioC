@@ -189,6 +189,7 @@ void declarePlayers(struct player player[]) {
             }
         }
     }
+    jogadoresAtivos = playerCount;
     printf("\nAperte qualquer botao para ir ao jogo\n");
     fflush(stdin);
     getchar();
