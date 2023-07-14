@@ -111,7 +111,7 @@ void declarePlayers(struct player player[]) {
         printf("Pressione qualquer botao para continuar\n");
         fflush(stdin); getchar();
         clearScreen();
-        goto typeplayernum;
+        goto typeplayernum;   //trocar goto por while
     }
     clearScreen();
 
@@ -187,7 +187,7 @@ void declarePlayers(struct player player[]) {
                     sorteaux[j]++;
                     sorte[j]++;
                 }
-                goto recheck;
+                goto recheck;   //trocar goto por while
             }
         }
     }

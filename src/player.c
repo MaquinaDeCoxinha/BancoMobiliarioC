@@ -70,7 +70,7 @@ int BuyAndSellHousesMenu(struct player *currentPlayer, struct house* houses)   /
             choicewheretobuy: move(95,31); fflush(stdin); int opcaoProp; scanf("%i", &opcaoProp);
             if(opcaoProp == 0){
                 ClearRightScreen(25);
-                goto buyorsell;
+                goto buyorsell;   //trocar goto por while
             }
             if( (currentPlayer->properties[(int)opcaoProp] > 40) || (currentPlayer->properties[(int)opcaoProp]) < 0 || (currentPlayer->properties[(int)opcaoProp]) == 0) {
                 move(95,32); printf("Opcao invalida, por favor tente novamente.");
@@ -78,7 +78,7 @@ int BuyAndSellHousesMenu(struct player *currentPlayer, struct house* houses)   /
                 fflush(stdin);
                 move(95,34); getchar();
                 ClearRightScreen(31);
-                goto choicewheretobuy;
+                goto choicewheretobuy;   //trocar goto por while
             }
             else if(houses[currentPlayer->properties[opcaoProp]].type == HOUSE_CMP){
                 move(95, 32); printf("A propriedade selecionada e do tipo companhia!");
@@ -87,7 +87,7 @@ int BuyAndSellHousesMenu(struct player *currentPlayer, struct house* houses)   /
                 fflush(stdin);
                 move(95,35); getchar();
                 ClearRightScreen(25);
-                goto choicebuyorsell;
+                goto choicebuyorsell;   //trocar goto por while
 
             }
             move(95, 32); printf("O preco para comprar uma casa nessa propriedade e $%d", houses[propertiesPlayer[opcaoProp]].buildCost);
@@ -115,12 +115,12 @@ int BuyAndSellHousesMenu(struct player *currentPlayer, struct house* houses)   /
                         fflush(stdin);
                         move(95,41); getchar();
                         ClearRightScreen(29);
-                        goto choicebuyorsell;
+                        goto choicebuyorsell;   //trocar goto por while
                     }
                     break;
                 case '2':
                     ClearRightScreen(29);
-                    goto choicebuyorsell;
+                    goto choicebuyorsell;   //trocar goto por while
                     break;
                 default:
                     move(95,38); printf("Opcao invalida, por favor tente novamente.");
@@ -128,7 +128,7 @@ int BuyAndSellHousesMenu(struct player *currentPlayer, struct house* houses)   /
                     fflush(stdin);
                     move(95,40); getchar();
                     ClearRightScreen(37);
-                    goto choicewannabuyhouse;
+                    goto choicewannabuyhouse;   //trocar goto por while
                     break;
             };
 
@@ -140,7 +140,7 @@ int BuyAndSellHousesMenu(struct player *currentPlayer, struct house* houses)   /
 
             if(opcaoProp2 == 0) {
                 ClearRightScreen(29);
-                goto choicebuyorsell;
+                goto choicebuyorsell;   //trocar goto por while
             }
 
             if( (currentPlayer->properties[opcaoProp2] > 40) || (currentPlayer->properties[opcaoProp2]) < 0) {
@@ -149,7 +149,7 @@ int BuyAndSellHousesMenu(struct player *currentPlayer, struct house* houses)   /
                 fflush(stdin);
                 move(95,34); getchar();
                 ClearRightScreen(31);
-                goto choicewheretosell;
+                goto choicewheretosell;   //trocar goto por while
             }
 
             if(houses[currentPlayer->properties[opcaoProp2]].housesBuilt <= 0) {
@@ -180,7 +180,7 @@ int BuyAndSellHousesMenu(struct player *currentPlayer, struct house* houses)   /
                     break;
                 case '2':
                     ClearRightScreen(29);
-                    goto choicebuyorsell;
+                    goto choicebuyorsell;   //trocar goto por while
                     break;
                 default:
                     move(95,37); printf("Opcao invalida, por favor tente novamente.");
@@ -188,7 +188,7 @@ int BuyAndSellHousesMenu(struct player *currentPlayer, struct house* houses)   /
                     fflush(stdin);
                     move(95,39); getchar();
                     ClearRightScreen(36);
-                    goto choicewannasellproperty;
+                    goto choicewannasellproperty;   //trocar goto por while
                     break;
                 }
                 ClearRightScreen(31);
@@ -214,14 +214,14 @@ int BuyAndSellHousesMenu(struct player *currentPlayer, struct house* houses)   /
                     break;
                 case '2':
                     ClearRightScreen(29);
-                    goto choicebuyorsell;
+                    goto choicebuyorsell;   //trocar goto por while
                     break;
                 default:
                     move(95,37); printf("Opcao invalida, por favor tente novamente.");
                     move(95,38); printf("Pressione qualquer botao para continuar.");
                     move(95,39); fflush(stdin); getchar();
                     ClearRightScreen(36);
-                    goto choicewannasellhouse;
+                    goto choicewannasellhouse;   //trocar goto por while
                     break;
             };
             break;
@@ -236,7 +236,7 @@ int BuyAndSellHousesMenu(struct player *currentPlayer, struct house* houses)   /
             fflush(stdin);
             move(95,32); fflush(stdin); getchar();
             ClearRightScreen(25);
-            goto buyorsell;
+            goto buyorsell;   //trocar goto por while
             break;
     };
     return EXIT_FAILURE;

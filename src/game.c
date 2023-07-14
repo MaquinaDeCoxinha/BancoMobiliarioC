@@ -39,10 +39,10 @@ int maingame() //loop do jogo
 
         if(currentPlayer->turno != turnos){
             playerInic++;
-            goto SAIRGAME;  }
+            goto SAIRGAME;  }   //trocar goto por while
         if(currentPlayer->faliu == 1){
             turnos++;
-            goto SAIRGAME;  }
+            goto SAIRGAME;  }   //trocar goto por while
 
         if(jogadoresAtivos <= 1) { //VITORIA!!!!!!!!!!!!!!!!!!!
             move(95, 1); printf("%s voce ganhou o jogo!!!", currentPlayer->nome);
@@ -75,7 +75,7 @@ int maingame() //loop do jogo
                     } else {
                         move(95,12); printf("As duas rolagens nao foram iguais...");
                         (currentPlayer->turnosPrisao)--;
-                        goto turnoacabou;
+                        goto turnoacabou;    //trocar goto por while
                     }
 
                     break;
@@ -93,7 +93,7 @@ int maingame() //loop do jogo
                     move(95,12); printf("Pressione qualquer botao para continuar");
                     move(95,13); fflush(stdin); getchar();
                     ClearRightScreen(10);
-                    goto choosepris;
+                    goto choosepris;    //trocar goto por while
                     break;
             }
             
@@ -265,7 +265,7 @@ int maingame() //loop do jogo
             currentPlayer->pos = 11;
             currentPlayer->prisao = TRUE;
             currentPlayer->turnosPrisao = 3;
-            goto turnoacabou;
+            goto turnoacabou;   //trocar goto por while
             break;
 
             case FREE_DAY:
@@ -292,7 +292,7 @@ int maingame() //loop do jogo
                             move(95,0); printf("error in BuyAndSellHousesMenu"); }
                     break;
                 case '2':
-                    goto turnoacabou;
+                    goto turnoacabou;   //trocar goto por while
                     break;
                 case '3':
                     move(95,9); printf("Voce tem certeza disso? nao sera possivel voltar... (1 = SIM)");
@@ -301,7 +301,7 @@ int maingame() //loop do jogo
                     if(opcao2 == '1') {
                         ClearRightScreen(0);
                         playerLosed(currentPlayer);
-                        goto turnoacabou;
+                        goto turnoacabou;   //trocar goto por while
                     } else {
                         move(95,11); printf("Tudo bem entao, nada sera feito.");
                         move(95,12); fflush(stdin); getchar();
@@ -370,7 +370,7 @@ int main(){
 	    fflush(stdin);
 	    getchar();
 	    fclose(instrucao);
-	    goto choice_mainmenu;
+	    goto choice_mainmenu;   //trocar goto por while
     }
 
     else if (choice == '3')
@@ -388,11 +388,11 @@ int main(){
 	    printf("Materia: Algoritmos e Programacao\n");
 	    fflush(stdin);
 	    getchar();
-	    goto choice_mainmenu;
+	    goto choice_mainmenu;   //trocar goto por while
     }
     else
     {
         printf("Opcao invalida! Por favor tente novamente.\n");
-        goto choice_mainmenu; 
+        goto choice_mainmenu;    //trocar goto por while
     }
 }
