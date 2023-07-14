@@ -10,7 +10,7 @@ int maingame() //loop do jogo
     declarePlayers(players);    //iniciando variáveis
     if(readMapInfo() != EXIT_SUCCESS){
         printf("Erro na funcao readMapInfo");
-        printf("Error: %d (%s)\n", errno, strerror(errno));
+        //printf("Error: %d (%s)\n", errno, strerror(errno));
         getchar();
         return EXIT_FAILURE;
     }

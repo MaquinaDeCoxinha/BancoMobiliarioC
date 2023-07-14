@@ -104,12 +104,19 @@ struct player players[10], *currentPlayer;
 
 void declarePlayers(struct player player[]) {
     clearScreen();
-    printf("Digite o numero de jogadores (max: 10):\n.: ");
+    typeplayernum: printf("Digite o numero de jogadores (max: 10):\n.: ");
     scanf("%i", &playerCount);
+    if(!(playerCount > 1 && playerCount < 11)) {
+        printf("Esse e um numero invalido, por favor tente novamente\n");
+        printf("Pressione qualquer botao para continuar\n");
+        fflush(stdin); getchar();
+        clearScreen();
+        goto typeplayernum;
+    }
     clearScreen();
 
     for (int i = 0; i < playerCount; i++) {
-        printf("\nDigite o nome do jogador %d: ", i + 1);
+        printf("\nDigite o nome do jogador %d: ", i + 1); // TODO: consertar bug quando o nome tem espaços
         scanf(" %s", player[i].nome);
 
         player[i].ID = i;
