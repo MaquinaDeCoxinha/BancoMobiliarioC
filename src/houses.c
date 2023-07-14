@@ -1,6 +1,5 @@
 #include "definitions.c"
 #define MAP_INFO_PATH "map.csv"
-//C:\\Users\\jvpvi\\Desktop\\GitHub_projetos\\github\\BancoMobiliarioC\\data
 
 enum{HOUSE_STD, HOUSE_CMP, GO_TO_JAIL, FREE_DAY};
 enum{ID_H, TYPE_H, NAME_H, SET_ID_H, COST_H, RENT_H, RENTW1_H, RENTW2_H, RENTW3_H, RENTW4_H, RENTW5_H, HCOST_H};

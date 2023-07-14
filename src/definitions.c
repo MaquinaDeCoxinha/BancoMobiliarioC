@@ -103,6 +103,7 @@ struct player{ //Definindo a as variáveis de cada jogador
 struct player players[10], *currentPlayer;
 
 void declarePlayers(struct player player[]) {
+    clearScreen();
     printf("Digite o numero de jogadores (max: 10):\n.: ");
     scanf("%i", &playerCount);
     clearScreen();
@@ -146,6 +147,11 @@ void declarePlayers(struct player player[]) {
     int sorteaux[playerCount];
     int vetorTurno[playerCount];
 
+    printf("\nAperte Enter para continuar");
+    fflush(stdin);
+    getchar();
+    clearScreen();
+
     for (int i = 0; i < playerCount; i++) {
         int rodar;
         printf("\nAperte um botao para jogar os dados de %s:\n.: ", player[i].nome);
@@ -180,7 +186,11 @@ void declarePlayers(struct player player[]) {
     }
 
     order(sorte, playerCount);
-
+    printf("\nAperte Enter para continuar");
+    fflush(stdin);
+    getchar();
+    clearScreen();
+    
     for (int i = 0; i < playerCount; i++) {
         for (int j = 0; j < playerCount; j++) {
             if (sorteaux[i] == sorte[j]) {

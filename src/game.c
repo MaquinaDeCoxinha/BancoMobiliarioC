@@ -45,9 +45,9 @@ int maingame() //loop do jogo
             goto SAIRGAME;  }
 
         if(jogadoresAtivos <= 1) { //VITORIA!!!!!!!!!!!!!!!!!!!
-            move(95, 0); printf("%s voce ganhou o jogo!!!", currentPlayer->nome);
-            move(95, 1); printf("Pressione qualquer tecla para continuar");
-            move(95, 2); fflush(stdin); getchar();
+            move(95, 1); printf("%s voce ganhou o jogo!!!", currentPlayer->nome);
+            move(95, 2); printf("Pressione qualquer tecla para continuar");
+            move(95, 3); fflush(stdin); getchar();
             return EXIT_SUCCESS;
         }
         
@@ -261,6 +261,7 @@ int maingame() //loop do jogo
 
             case GO_TO_JAIL:
             move(95,5); printf("Opa! Você está preso!");
+            movePlayer(currentPlayer, currentPlayer->pos, 11);
             currentPlayer->pos = 11;
             currentPlayer->prisao = TRUE;
             currentPlayer->turnosPrisao = 3;
@@ -329,6 +330,7 @@ int maingame() //loop do jogo
 
 // int main
 int main(){
+    choice_mainmenu:
     clearScreen();
     printf("\n                                              888b     d888  .d88888b.  888b    888  .d88888b.  8888888b.   .d88888b.  888    Y88b   d88P           "); 
     printf("\n                                              8888b   d8888 d88P\" \"Y88b 8888b   888 d88P\" \"Y88b 888   Y88b d88P\" \"Y88b 888     Y88b d88P      ");       
@@ -342,7 +344,8 @@ int main(){
     srand((unsigned)time(NULL));
     //checkWindowSize(172, 40);     // TODO: RESOLVER ISSO AQUI DE ALGUM JEITO
     printf("1- Novo Jogo \n");
-    choice_mainmenu:
+    printf("2- Instrucoes \n");
+    printf("3- Creditos \n");
     fflush(stdin);
     char choice = getchar();
     if (choice == '1') 
@@ -352,6 +355,39 @@ int main(){
             printf("Error in maingame");
             getchar();
         }
+    }
+    else if (choice == '2')
+    {
+    	clearScreen();
+	char url[]="regras.txt";
+	char ch;
+	    FILE *instrucao;
+	    instrucao = fopen(url, "r");
+	    while((ch=fgetc(instrucao))!=EOF){
+	    putchar(ch);
+	    }
+	    printf("\nAperte qualquer botao para fechar o menu de instrucoes");
+	    fflush(stdin);
+	    getchar();
+	    fclose(instrucao);
+	    goto choice_mainmenu;
+    }
+
+    else if (choice == '3')
+    {
+	    clearScreen();
+	    printf("\nTrabalho desenvolvido pelos Alunos:\n");
+	    printf("Joao Vitor Pinto Vizeu\n");
+	    printf("Joao Ricardo Monteiro Scofield Lauar\n");
+	    printf("Joao Marcos\n");
+	    printf("Marias Vilas-Boas\n");
+	    printf("Bernardo Pache\n");
+
+	    printf("\nProfessora: Priscila Machado Vieira Lima\n");
+	    printf("Materia: Algoritmos e Programacao\n");
+	    fflush(stdin);
+	    getchar();
+	    goto choice_mainmenu;
     }
     else
     {

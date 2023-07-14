@@ -32,7 +32,7 @@ int delPropertieToPlayer(struct player *currentPlayer, struct house houses[], in
 }
 
 void updateNetworth(struct player *currentPlayer) {
-    int valorPropriedades;
+    int valorPropriedades = 0;
     for(int i = 0; i < 40; i++){
         if(currentPlayer->properties[i] != 0) {
             valorPropriedades += (int)(houses[i].cost/2);
@@ -98,7 +98,8 @@ int BuyAndSellHousesMenu(struct player *currentPlayer, struct house* houses)   /
             choicewannabuyhouse: move(95, 37); fflush(stdin); char opcao2 = getchar();
             switch (opcao2) {
                 case '1':
-                    if(!((currentPlayer->money -= houses[propertiesPlayer[opcaoProp]].buildCost) < 0)) {
+                    if((currentPlayer->money) >= (houses[propertiesPlayer[opcaoProp]].buildCost)) { //TODO: Colocar o limite de 5 casas
+                        houses[propertiesPlayer[opcaoProp]].housesBuilt++;
                         updateHousesRent(houses[propertiesPlayer[opcaoProp]].ID);
                         move(95,38); printf("Casa comprada com sucesso!");
                         move(95,39); printf("O menu de compras agora sera atualizado.");
@@ -193,7 +194,7 @@ int BuyAndSellHousesMenu(struct player *currentPlayer, struct house* houses)   /
                 ClearRightScreen(31);
             }
 
-            move(95, 32); printf("Voce ganhara $%.0f ao vender uma casa dessa propriedade", (houses[currentPlayer->properties[opcaoProp2]].buildCost)/2);
+            move(95, 32); printf("Voce ganhara $%d ao vender uma casa dessa propriedade", (int)((houses[currentPlayer->properties[opcaoProp2]].buildCost)/2));
             move(95, 33); printf("Deseja vender uma casa aqui?");
             move(95, 34); printf("1- SIM");
             move(95, 35); printf("2- VOLTAR");
@@ -202,6 +203,7 @@ int BuyAndSellHousesMenu(struct player *currentPlayer, struct house* houses)   /
                 case '1':
                     currentPlayer->money += (houses[currentPlayer->properties[opcaoProp2]].buildCost)/2;
                     houses[currentPlayer->properties[opcaoProp2]].housesBuilt -= 1;
+                    updateHousesRent(currentPlayer->properties[opcaoProp2]);
                     move(95,37); printf("Casa vendida com sucesso!");
                     move(95,38); printf("O menu de compras agora sera atualizado.");
                     move(95,39); printf("Pressione qualquer botao para continuar.");
