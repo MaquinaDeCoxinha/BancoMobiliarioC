@@ -379,9 +379,10 @@ int main(){
 	    printf("\nTrabalho desenvolvido pelos Alunos:\n");
 	    printf("Joao Vitor Pinto Vizeu\n");
 	    printf("Joao Ricardo Monteiro Scofield Lauar\n");
-	    printf("Joao Marcos\n");
+	    printf("Joao Marcos Correa Gomes\n");
 	    printf("Marias Vilas-Boas\n");
-	    printf("Bernardo Pache\n");
+	    printf("Bernardo Pache de Faria Carneiro\n");
+        printf("Maria Eduarda de Carvalho\n");
 
 	    printf("\nProfessora: Priscila Machado Vieira Lima\n");
 	    printf("Materia: Algoritmos e Programacao\n");
