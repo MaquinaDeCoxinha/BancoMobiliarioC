@@ -1,0 +1,98 @@
+Como Jogar Banco Imobiliario
+
+Qual o objetivo do jogo?
+
+Conquistar a maior fortuna possivel e levar os outros jogadores a falencia.
+Preparacao
+
+Os jogadores, de 2 a 6, deverao escolher o peao e posiciona-los na casa ‘inicio’. Escolha um dos jogadores para ser o banqueiro. Ele sera responsavel pelos pagamentos e recebimentos do Banco e entregas de Titulos de Posse, lembrando que o banqueiro tambem joga. No jogo com app a funcao de banqueiro nao existe.
+
+Embaralhe as cartas de sorte ou reves e coloque-as no espaco indicado no tabuleiro.
+
+O banqueiro devera distribuir, no inicio do jogo, o dinheiro para todos os jogadores conforme descrito no manual de cada versao. Na versao com app, existe a opcao de acelerar o inicio do jogo leiloando as propriedades. Legal, ne?
+Comeca o Jogo
+
+Dispute nos dados quem sera o primeiro a jogar. Quem tirar o maior numero no dado comeca o jogo, seguido pelo jogador a sua esquerda.
+
+O jogador comeca a rodada jogando os dois dados e somar o resultado, entao avancar com o peao a quantidade de casas e cumprir o que determina aquela casa.
+
+Caso o jogador tire nos dados dois numeros iguais, ele tem direito a novo lancamento. Caso tire dois numeros iguais tres vezes, ele vai para a prisao.
+
+Atencao antes de comecar a jogar:
+
+    O banqueiro precisa ter cuidado para nao misturar seu dinheiro com o do Banco.
+    Separe os Titulos de Posse por cor e deixe-os com o banqueiro.
+
+Movimentando o Peao
+
+Caso seu peao caia em uma propriedade sem dono, voce tera o direito de compra-la pelo preco indicado no tabuleiro. Entregue o dinheiro ao banqueiro e ele entregara o Titulo de Posse.
+
+Sempre que seu peao passar ou parar na casa ‘inicio’, voce devera receber dinheiro do Banco pelos servicos prestados. Confira qual o valor no manual da sua versao.
+Sorte ou Reves
+
+Caso seu peao pare na casa Sorte ou Reves, voce deve pegar a primeira carta do monte, cumprir o que ela indica e a devolver para o final do monte apos concluir a tarefa.
+
+Se a carta sorteada informar Habeas Corpus ou Compra Livre, voce deve guarda-la para usar depois. Ela pode ser utilizada em qualquer momento que voce deseja. Apos utilizada, deve ser retornada ao final do monte.
+
+A carta Habeas Corpus te da o direito de saida livre da prisao sem a necessidade de tirar uma dupla nos dados ou pagar fianca.
+
+Dica: Esta precisando de dinheiro? Voce pode negociar a venda da carta Habeas Corpus com outro jogador.
+Propriedades
+
+Para comprar alguma propriedade, que seja um terreno, praca, bairro ou empresa, e necessario que seu peao caia em uma das casas, caso ja nao seja o dono.
+
+Caso a propriedade seja de outro jogador, se o seu peao parar na casa, voce devera pagar ao dono desta propriedade o valor do aluguel indicado no titulo da propriedade.
+
+Dica: Diversificar seus investimentos e palavra de ordem no mundo dos negocios. Lembre-se que quanto mais propriedades tiver, maior a probabilidade de ganhar dinheiro, porque sempre que cairem na sua propriedade voce recebera aluguel. Nada mau, ne?
+Valorizando seus terrenos
+
+Quando conseguir comprar todas as propriedades de um mesmo grupo de cores, voce podera acrescentar casas ou hoteis nos seus terrenos, aumentando assim o valor de seus alugueis.
+
+Lei da oferta e da procura: quando todas as casas ou hoteis do jogo acabarem, voce tera que esperar ate que outro jogador se desfaca de pelo menos um de seus imoveis. Porem, a qualquer momento voce podera fazer uma oferta pela propriedade desejada, desde que nao haja construcoes nela.
+
+Se houver uma negociacao de propriedade com imovel, primeiramente o proprietario devera vender as casas ou hoteis para o Banco pela metade do valor pago. So assim e possivel negociar a propriedade.
+
+Atencao: Voce so podera construir uma segunda casa em uma propriedade, se todas as outras daquele grupo de cores ja tiver pelo menos uma casa. Para construir a terceira, todas deverao ter pelo menos duas casas, e assim sucessivamente.
+Prisao
+
+Existem tres formas de se ir para a prisao:
+
+Caindo na casa que indica “Va para a prisao”
+Tirar 3 duplas seguidas no dado
+Pegar uma carta de Sorte ou Reves que te manda para a prisao
+
+Se acontecer alguma dessa situacoes, mova seu peao ate a casa ‘Prisao’ ou ‘Detencao’.
+
+Para sair da prisao nao e tao complicado. Existem tres formas:
+
+    Tirar duas duplas nos dados – na proxima jogada apos ser preso, voce deve jogar os dados. Se tirar numeros iguais, voce pode sair da prisao e andar o numero de casas indicados no dado.
+    Pagar a fianca – Voce tem a opcao de pagar a fianca enquanto estiver preso, confira o valor no manual da sua versao. Apos tres rodadas que nao conseguir tirar as duplas no dado, voce e obrigado a pagar a fianca. Feito isso, jogue novamente os dados e avance o numero de casas indicados.
+    Utilizar o seu cartao de Habeas Corpus – No inicio de sua rodada na prisao, mostre a todos os jogadores o seu cartao de Habeas Corpus, o descarte e jogue os dados para avancar no tabuleiro novamente.
+
+Hipoteca
+
+Voce pode hipotecar a sua propriedade que nao tiver imoveis.
+
+Para isso, basta recorrer ao banqueiro, que devera pagar a quantidade exata que esta descrita no titulo. Essa propriedade nao podera ser negociada com nenhum outro jogador sem a autorizacao do proprietario.
+
+Enquanto a casa estiver hipotecada, nem o proprietario e nem o banqueiro receberao aluguel.
+
+Para recuperar o Titulo, o proprietario devera pagar uma multa sobre o valor do Titulo.
+
+Dica: Voce so podera resgatar a sua propriedade na sua vez de jogar.
+
+Esta no sufoco?
+
+Veja algumas dicas para te ajudar a sair dessa!
+
+Desfaca-se de suas casas e/ou hoteis vendendo-as ao Banco pela metade do preco.
+Coloque um ou mais imoveis na hipoteca
+Negocie suas propriedades com outros jogadores ou com o Banco
+
+Atencao: NAO sao permitidos emprestimos entre jogadores e com o Banco durante todo o jogo.
+Falencia
+
+Se mesmo apos vender suas casas e hoteis, hipotecar ou negociar suas propriedades, voce nao conseguir dinheiro suficiente para quitar sua divida, voce declarara falencia e estara fora do jogo. Deixe todo o seu dinheiro e propriedades restantes com o jogador a quem voce deve.
+Caso haja propriedades hipotecadas o Banco ira recolher os Titulos de Posse e entregara o dinheiro arrecadado para o credor.
+
+Caso ainda falte dinheiro, o credor ficara no prejuizo.
