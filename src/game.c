@@ -59,47 +59,73 @@ int maingame()
         printPlayerInfo(currentPlayer);
 
         int housesToWalk;
-        if(currentPlayer->prisao){
+        if (currentPlayer->prisao) {
             printPlayerInfo(currentPlayer);
-            move(95,5); printf("Voce esta na prisao");
-            move(95,6); printf("Faltam %i turnos.", currentPlayer->turnosPrisao);
-            move(95,7); printf("O que voce deseja fazer?");
-            move(95,8); printf("1 - TENTAR ROLAR"); move(95,9); printf("2 - PAGAR FIANCA(200$)");
-            while(true){
-                move(95,10); fflush(stdin); char opcaoPris = getchar();
-                switch (opcaoPris)
-                {
-                    case '1': ;
-                        int rollPris1 = rollDice();
-                        int rollPris2 = rollDice();
-                        move(95,11); printf("%s rolou %i e %i para sair da prisao!", currentPlayer->nome, rollPris1, rollPris2);
-                        if(rollPris1==rollPris2) {
-                            move(95,12); printf("As duas rolagens foram iguais! %s saiu da prisao!", currentPlayer->nome);
-                            move(95,13); printf("Pressione qualquer botao para continuar");
-                            move(95,14); fflush(stdin); getchar();
-                        } else {
-                            move(95,12); printf("As duas rolagens nao foram iguais...");
-                            (currentPlayer->turnosPrisao)--;
-                            break;
-                        }
+            move(95, 5);
+            printf("Você esta na prisao");
+            move(95, 6);
+            printf("Faltam %i turnos.", currentPlayer->turnosPrisao);
+            move(95, 7);
+            printf("O que você deseja fazer?");
+            move(95, 8);
+            printf("1 - TENTAR ROLAR");
+            move(95, 9);
+            printf("2 - PAGAR FIANÇA(200$)");
 
-                        break;
-                    case '2':
-                        if(currentPlayer->money >= 500) {
-                            currentPlayer->money -= 500;
-                            currentPlayer->turnosPrisao = currentPlayer->prisao = 0;
-                        } else {
-                            move(95,12); printf("Voce nao tem dinheiro suficiente!");
-                            move(95,13); printf("Pressione qualquer botao para continuar");
-                            move(95,14); fflush(stdin); getchar();
+            while (true) {
+                move(95, 10);
+                fflush(stdin);
+                char opcaoPris = getchar();
+
+                if (opcaoPris == '1') {
+                    int rollPris1 = rollDice();
+                    int rollPris2 = rollDice();
+
+                    move(95, 11);
+                    printf("%s rolou %i e %i para sair da prisao!", currentPlayer->nome, rollPris1, rollPris2);
+
+                    if (rollPris1 == rollPris2) {
+                        move(95, 12);
+                        printf("As duas rolagens foram iguais! %s saiu da prisao!", currentPlayer->nome);
+                        move(95, 13);
+                        printf("Pressione qualquer botao para continuar");
+                        currentPlayer->turnosPrisao = currentPlayer->prisao = 0;
+                        move(95, 14);
+                        fflush(stdin);
+                        getchar();
+                    } else {
+                        move(95, 12);
+                        printf("As duas rolagens nao foram iguais...");
+                        (currentPlayer->turnosPrisao)--;
+
+                        if (currentPlayer->turnosPrisao <= 0) {
+                            currentPlayer->prisao = 0;
                         }
                         break;
-                    default:
-                        move(95,11); printf("Opcao invalida, por favor tente novamente");
-                        move(95,12); printf("Pressione qualquer botao para continuar");
-                        move(95,13); fflush(stdin); getchar();
-                        ClearRightScreen(10);
-                        break;
+                    }
+                } else if (opcaoPris == '2') {
+                    if (currentPlayer->money >= 500) {
+                        currentPlayer->money -= 500;
+                        currentPlayer->turnosPrisao = currentPlayer->prisao = 0;
+                    } else {
+                        move(95, 12);
+                        printf("Você não tem dinheiro suficiente!");
+                        move(95, 13);
+                        printf("Pressione qualquer botão para continuar");
+                        move(95, 14);
+                        fflush(stdin);
+                        getchar();
+                    }
+                    break;
+                } else {
+                    move(95, 11);
+                    printf("Opção invalida, por favor tente novamente");
+                    move(95, 12);
+                    printf("Pressione qualquer botão para continuar");
+                    move(95, 13);
+                    fflush(stdin);
+                    getchar();
+                    ClearRightScreen(10);
                 }
             }
         }
@@ -139,7 +165,7 @@ int maingame()
             movePlayer(currentPlayer, oldLocation, currentPlayer->pos);
         }
         currentHouse = &houses[currentPlayer->pos];
-        switch (currentHouse->type)
+        switch (currentHouse->type) //trocar para serie de if else
         {
             case HOUSE_STD:
             move(95,6); printf("Voce caiu na casa %s, ", currentHouse->name);
@@ -297,7 +323,7 @@ int maingame()
             default:
             move(95,5); printf("Casa indefinida! Um beijo do desenvolvedor :3");
             break;
-        }
+        } //fim do switch
 
         while(true) {
             ClearRightScreen(0);
